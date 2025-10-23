@@ -1,14 +1,43 @@
 body{
-    background-color: greenyellow;
+    background-color: rgb(111, 143, 63);
+    background: url(../img/paysage.avif) no-repeat;
+    height: 1100px;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .big{
-    color: rgb(46, 192, 236);
+    color: rgb(212, 206, 206);
     font-size: large;
     font-weight: bold;
     margin-top: 50px;
 }
 
-.img1 img{
-    width: 15%;
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+.img1 img{
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 200px  
+}
+
+.img2 img{
+    width: 70%;
+    margin-top: 50px  
+}
+
+.img3 img{
+    width: 50%; 
+}
+
+
+.connexion{
+    text-align: center;
+}
+
+

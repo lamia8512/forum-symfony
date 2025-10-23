@@ -8,13 +8,27 @@
     <h1> Forum fée 🧚‍♂️</h1>
 
     <div class="big">
-        <p>Bienvenue au royaume des fées</p>
+    {% if app.user  %}
+        <h1> Coucou, {{ app.user.pseudo}}, Féerique ! </h>
+    {% else  %}
+        <h1> Forum des fées ! </h1>
+        <p>Tu peux te connecter ou t'inscrire pour t'envoler avec nous !</p>
+    {% endif  %}
     </div>
 
-  
+    <header>
     <div class="img1" >
         <img src="img/fée.png" alt="fée magique">
     </div>
+
+    <div class="img2">
+       <img src="img/fée.png" alt="fée magique">
+    </div>
+
+    <div class="img3">
+      <img src="img/fée.png" alt="fée magique">
+    </div>
+    </header>
 
     
 {% endblock %}
