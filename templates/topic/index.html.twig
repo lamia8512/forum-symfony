@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Topic index{% endblock %}
+
+{% block body %}
+    <div class="big">
+        <h1><strong>Les Topics</strong></h1>
+    </div>
+    <div class="bg-success p-5 rounded shadow">
+        <table class="table">
+            <thead>
+            <div class="bg-warning p-3 shadow">
+                <tr>
+                    <th class="liste">Id</th>
+                    <th class="liste">Titre</th>
+                    <th class="liste">Description</th>
+                    <th class="liste">Date_de_creation</th>
+                    <th class="liste">Date_de_modification</th>
+                    <th class="liste">Actions</th>
+                </tr>
+             </div>
+            </thead>
+    </div>
+        <tbody>
+        {% for topic in topics %}
+            <tr>
+                <td>{{ topic.id }}</td>
+                <td>{{ topic.title }}</td>
+                <td>{{ topic.description }}</td>
+                <td>{{ topic.creationDate ? topic.creationDate|date('Y-m-d') : '' }}</td>
+                <td>{{ topic.modificationDate ? topic.modificationDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_topic_show', {'id': topic.id}) }}" class="btn btn-dark mt-2">Voir🧚🏿</a>
+                    <a href="{{ path('app_topic_edit', {'id': topic.id}) }}" class="btn btn-dark mt-2">Modifier🧚🏼</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">topic introuvable</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_topic_new') }}" class="btn btn-warning mt-2">Créer un nouveau topic</a>
+{% endblock %}

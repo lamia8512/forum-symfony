@@ -4,18 +4,16 @@
 
 {% block body %}
 
-
-    <h1> Forum fée 🧚‍♂️</h1>
-
     <div class="big">
-    {% if app.user  %}
-        <h1> Coucou, {{ app.user.pseudo}}, Féerique ! </h>
-    {% else  %}
-        <h1> Forum des fées ! </h1>
+        {% if app.user  %}
+            <h1> Coucou, {{ app.user.pseudo}}, Féerique ! </h>
+        {% else  %}
+            <h1> Royaume des fées 🧚‍♂️ </h1>
+    </div>
+     <div class="big2">
         <p>Tu peux te connecter ou t'inscrire pour t'envoler avec nous !</p>
     {% endif  %}
     </div>
-
     <header>
     <div class="img1" >
         <img src="img/fée.png" alt="fée magique">

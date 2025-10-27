@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment index{% endblock %}
+
+{% block body %}
+    <div class="big">
+        <h1><strong>Les commentaires</strong></h1>
+    </div>
+    <div class="bg-primary p-5 rounded shadow">
+        <table class="table">
+            <thead>
+            <div class="bg-info p-3 shadow">
+                <tr>
+                    <th class="liste">Id</th>
+                    <th class="liste">Message</th>
+                    <th class="liste">Creation_date</th>
+                    <th class="liste">Modification_date</th>
+                    <th class="liste">Actions</th>
+                </tr>
+            </div>
+            </thead>
+    </div>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>{{ comment.message }}</td>
+                <td>{{ comment.creationDate ? comment.creationDate|date('Y-m-d') : '' }}</td>
+                <td>{{ comment.modificationDate ? comment.modificationDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_comment_show', {'id': comment.id}) }}" class="btn btn-dark mt-2">Voir🧚🏽</a>
+                    <a href="{{ path('app_comment_edit', {'id': comment.id}) }}" class="btn btn-dark mt-2">Modifier 🧚🏽‍♀️</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_comment_new') }}" class="btn btn-info mt-2">Créer un nouveau commentaire</a>
+{% endblock %}
