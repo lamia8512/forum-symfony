@@ -30,8 +30,9 @@
                 <td>{{ topic.creationDate ? topic.creationDate|date('Y-m-d') : '' }}</td>
                 <td>{{ topic.modificationDate ? topic.modificationDate|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_topic_show', {'id': topic.id}) }}" class="btn btn-dark mt-2">Voir🧚🏿</a>
-                    <a href="{{ path('app_topic_edit', {'id': topic.id}) }}" class="btn btn-dark mt-2">Modifier🧚🏼</a>
+                    <a href="{{ path('app_topic_show', {'id': topic.id}) }}" class="btn btn-warning mt-2">Voir🧚🏿</a>
+                    <a href="{{ path('app_topic_edit', {'id': topic.id}) }}" class="btn btn-success mt-2">Modifier🧚🏼</a>
+                    <a href="{{ path('app_topic_delete', {'id': topic.id}) }}" class="btn btn-dark mt-2">Supprimer 🧚</a>
                 </td>
             </tr>
         {% else %}

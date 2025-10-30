@@ -28,8 +28,9 @@
                 <td>{{ comment.creationDate ? comment.creationDate|date('Y-m-d') : '' }}</td>
                 <td>{{ comment.modificationDate ? comment.modificationDate|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_comment_show', {'id': comment.id}) }}" class="btn btn-dark mt-2">Voir🧚🏽</a>
-                    <a href="{{ path('app_comment_edit', {'id': comment.id}) }}" class="btn btn-dark mt-2">Modifier 🧚🏽‍♀️</a>
+                    <a href="{{ path('app_comment_show', {'id': comment.id}) }}" class="btn btn-warning mt-2">Voir🧚🏽</a>
+                    <a href="{{ path('app_comment_edit', {'id': comment.id}) }}" class="btn btn-success mt-2">Modifier 🧚🏽‍♀️</a>
+                    <a href="{{ path('app_comment_delete', {'id': comment.id}) }}" class="btn btn-dark mt-2">Supprimer 🧚</a>
                 </td>
             </tr>
         {% else %}
