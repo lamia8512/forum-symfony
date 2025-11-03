@@ -38,6 +38,7 @@ security:
         # - { path: ^/profile, roles: ROLE_USER }
         - {path: ^/topic, roles: ROLE_USER}
         - {path: ^/message, roles: ROLE_USER}
+        - {path: ^/comment, roles: ROLE_USER}
 
 when@test:
     security:
